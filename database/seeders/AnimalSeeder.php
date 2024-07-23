@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Functions\Utilities;
 use App\Models\Animal;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,7 +16,7 @@ class AnimalSeeder extends Seeder
     public function run(): void
     {
         //
-        $animalsData = $this->getCsvInfo(__DIR__ . '/../resources/assets/animal.csv');
+        $animalsData = Utilities::getCsvInfo(__DIR__ . '/../../resources/assets/animals.csv');
 
         foreach ($animalsData as $index => $singleAnimalData){
 
@@ -32,29 +33,6 @@ class AnimalSeeder extends Seeder
                 $newAnimal->save();
             }
         }
-    }
-
-    public function getCsvInfo($filePath){
-
-        $csvData = [];
-
-        // apriamo il file
-        $fileData = fopen($filePath, 'r');
-
-        // se non lo trovi...
-        if ($fileData === false){
-            throw new InvalidArgumentException('File not found, check your path!');
-        }
-
-        // se invece lo trovi...
-        while (($csvRow = fgetcsv($fileData)) !== false){
-            $csvData[] = $csvRow;
-        }
-
-        //chiudiamo il file
-        fclose($fileData);
-
-        return $csvData;
     }
 
 }
