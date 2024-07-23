@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\Guest\PageController as GuestPageController;
 
 use Illuminate\Support\Facades\Route;
@@ -15,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [GuestPageController::class, 'index'])->name('guest.home');
+// Route::get('/', [GuestPageController::class, 'index'])->name('guest.home');
+
+Route::get('/', [AnimalController::class, 'index'])->name('pages.animals.index');
+Route::get('/{name}', [AnimalController::class, 'show'])->name('pages.animals.show');

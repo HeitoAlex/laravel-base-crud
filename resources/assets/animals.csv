@@ -1,0 +1,16 @@
+id,name,class,order,family,diet,habitat,created_at,updated_at
+1,Lion,Mammalia,Feliformia,Felidae,Carnivore,Savanna,2023-10-01 12:00:00,2023-10-01 12:00:00
+2,Elephant,Mammalia,Proboscidea,Elephantidae,Herbivore,Tropical forest,2023-10-01 12:00:00,2023-10-01 12:00:00
+3,Frog,Amphibia,Anura,Ranidae,Insectivore,Freshwater,2023-10-01 12:00:00,2023-10-01 12:00:00
+4,Eagle,Aves,Accipitriformes,Accipitridae,Carnivore,Mountains,2023-10-01 12:00:00,2023-10-01 12:00:00
+5,Shark,Chondrichthyes,Selachimorpha,Selachimorpha,Carnivore,Oceans,2023-10-01 12:00:00,2023-10-01 12:00:00
+6,Frog,Amphibia,Anura,Ranidae,Insectivore,Wetlands,2023-10-01 12:00:00,2023-10-01 12:00:00
+7,Tiger,Mammalia,Feliformia,Felidae,Carnivore,Forests,2023-10-01 12:00:00,2023-10-01 12:00:00
+8,Rabbit,Mammalia,Lagomorpha,Leporidae,Herbivore,Grasslands,2023-10-01 12:00:00,2023-10-01 12:00:00
+9,Turtle,Reptilia,Chelonii,Testudines,Herbivore,Lakes,2023-10-01 12:00:00,2023-10-01 12:00:00
+10,Parrot,Aves,Psittaciformes,Psittacidae,Omnivore,Tropical forests,2023-10-01 12:00:00,2023-10-01 12:00:00
+11,Salmon,Actinopterygii,Salmoniformes,Salmonidae,Omnivore,Rivers,2023-10-01 12:00:00,2023-10-01 12:00:00
+12,Goat,Mammalia,Artiodactyla,Bovidae,Herbivore,Mountain areas,2023-10-01 12:00:00,2023-10-01 12:00:00
+13,Panther,Mammalia,Feliformia,Felidae,Carnivore,Rainforests,2023-10-01 12:00:00,2023-10-01 12:00:00
+14,Mantis,Insecta,Mantodea,Mantidae,Carnivore,Gardens,2023-10-01 12:00:00,2023-10-01 12:00:00
+15,Chameleon,Reptilia,Squamata,Chamaeleonidae,Insectivore,Tropical areas,2023-10-01 12:00:00,2023-10-01 12:00:00
