@@ -2,6 +2,6 @@
 
 @section('page-title, 'Animal')
 
-@section()
+@section('main-content')
 
 @endsection
