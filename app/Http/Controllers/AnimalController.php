@@ -44,7 +44,7 @@ class AnimalController extends Controller
         $newAnimal->habitat = $data['habitat'];
         $newAnimal->save();
 
-        //alternativa per creare Animal in una sola riga
+        //alternativa per creare Animal in una sola riga utilizzando le $fillable inserite nel Model
         // $newAnimal = Animal::create($data);
 
         return redirect()->route('pages.animals.show', $newAnimal);
