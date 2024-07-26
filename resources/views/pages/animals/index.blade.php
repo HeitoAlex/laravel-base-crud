@@ -29,8 +29,8 @@
             </ul>
             <div class="card-body">
                 <a href="{{ route('pages.animals.show', $animal) }}" class="card-link">Animal Details</a>
-                {{-- <a href="{{ route('pages.animals.edit', $animal) }}" class="card-link">Edit</a>
-                <a href="{{ route('pages.animals.delete', $animal) }}" class="card-link">Delete</a> --}}
+                <a href="{{ route('pages.animals.edit', $animal) }}" class="card-link">Edit</a>
+                {{-- <a href="{{ route('pages.animals.delete', $animal) }}" class="card-link">Delete</a> --}}
             </div>
         </div>
         @endforeach

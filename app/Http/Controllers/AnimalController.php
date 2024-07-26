@@ -67,6 +67,7 @@ class AnimalController extends Controller
     public function edit(Animal $animal)
     {
         //
+        return view('pages.animals.edit', compact('animal'));
     }
 
     /**
@@ -75,6 +76,21 @@ class AnimalController extends Controller
     public function update(Request $request, Animal $animal)
     {
         //
+        $data = $request->all();
+
+        //alternativa per creare Animal a mano senza le $fillable inserite nel Model
+        // $animal = new Animal();
+        // $animal->name = $data['name'];
+        // $animal->class = $data['class'];
+        // $animal->order = $data['order'];
+        // $animal->family = $data['family'];
+        // $animal->diet = $data['diet'];
+        // $animal->habitat = $data['habitat'];
+        // $animal->save();
+
+        $animal->update($data);
+
+        return redirect()->route('pages.animals.show', $animal);
     }
 
     /**
@@ -83,5 +99,8 @@ class AnimalController extends Controller
     public function destroy(Animal $animal)
     {
         //
+        $animal->delete();
+
+        return redirect()->route('pages.animals.index');
     }
 }
