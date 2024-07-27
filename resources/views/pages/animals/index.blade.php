@@ -30,11 +30,21 @@
             <div class="card-body">
                 <a href="{{ route('pages.animals.show', $animal) }}" class="card-link">Animal Details</a>
                 <a href="{{ route('pages.animals.edit', $animal) }}" class="card-link">Edit</a>
-                {{-- <a href="{{ route('pages.animals.delete', $animal) }}" class="card-link">Delete</a> --}}
+
+                {{-- per realizzare una delete devo prima creare un form che mi consenta di assegnare il metodo 'delete'  --}}
+                <form action="{{ route('animals.destroy', $animal) }}" method="POST" class="d-inline-block card-link animal-form-delete">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
             </div>
         </div>
         @endforeach
     </div>
 </section>
 
+@endsection
+
+@section('custom-scripts')
+    @vite('resources/js/delete-confirm.js')
 @endsection

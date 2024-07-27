@@ -26,6 +26,10 @@
                     {{ $animal->habitat }}
                 </li>
             </ul>
+            <div class="card-body">
+                <a href="{{ route('pages.animals.index', $animal) }}" class="card-link">Animal list</a>
+                <a href="{{ route('pages.animals.edit', $animal) }}" class="card-link">Edit</a>
+            </div>
         </div>
     </div>
 </section>

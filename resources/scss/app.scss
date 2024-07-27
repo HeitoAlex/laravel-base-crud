@@ -1,1 +1,14 @@
 @import "⁓bootstrap/scss/bootstrap.scss";
+
+
+.delete-button{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    color: red;
+
+}
+
+.delete-button:hover{
+    color: darkred;
+}
