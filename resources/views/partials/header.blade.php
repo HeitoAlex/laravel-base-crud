@@ -8,10 +8,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() === 'pages.animals.index' ? 'active' : ''}}" aria-current="page" href="{{ route('pages.animals.index')}}">Animals</a>
+                        <a class="nav-link {{ Route::currentRouteName() === 'animals.index' ? 'active' : ''}}" aria-current="page" href="{{ route('animals.index')}}">Animals</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() === 'pages.animals.create' ? 'active' : ''}}" href="{{ route('pages.animals.create')}}">Create new animal</a>
+                        <a class="nav-link {{ Route::currentRouteName() === 'animals.create' ? 'active' : ''}}" href="{{ route('animals.create')}}">Create new animal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() === 'animals.deleted' ? 'active' : ''}}" href="{{ route('animals.deleted')}}">Deleted animals                        </a>
                     </li>
                 </ul>
             </div>

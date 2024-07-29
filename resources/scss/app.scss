@@ -1,6 +1,19 @@
 @import "⁓bootstrap/scss/bootstrap.scss";
 
 
+.restore-button{
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    color: green;
+
+}
+
+.restore-button:hover{
+    color: darkgreen;
+}
+
+
 .delete-button{
     border: none;
     background-color: transparent;

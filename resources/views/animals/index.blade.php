@@ -28,11 +28,11 @@
                 </li>
             </ul>
             <div class="card-body">
-                <a href="{{ route('pages.animals.show', $animal) }}" class="card-link">Animal Details</a>
-                <a href="{{ route('pages.animals.edit', $animal) }}" class="card-link">Edit</a>
+                <a href="{{ route('animals.show', $animal) }}" class="card-link">Animal Details</a>
+                <a href="{{ route('animals.edit', $animal) }}" class="card-link">Edit</a>
 
                 {{-- per realizzare una delete devo prima creare un form che mi consenta di assegnare il metodo 'delete'  --}}
-                <form action="{{ route('animals.destroy', $animal) }}" method="POST" class="d-inline-block card-link animal-form-delete">
+                <form action="{{ route('animals.destroy', $animal) }}" method="POST" class="d-inline-block card-link animal-form-delete" data-animal-name="{{ $animal->name }}">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="delete-button">Delete</button>

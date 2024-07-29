@@ -18,12 +18,17 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [GuestPageController::class, 'index'])->name('guest.home');
 
-Route::get('/', [AnimalController::class, 'index'])->name('pages.animals.index');
-Route::post('/', [AnimalController::class, 'store'])->name('pages.animals.store');
-Route::get('/create', [AnimalController::class, 'create'])->name('pages.animals.create');
-Route::get('/{animal}/edit', [AnimalController::class, 'edit'])->name('pages.animals.edit');
-Route::put('/{animal}', [AnimalController::class, 'update'])->name('pages.animals.update');
-Route::get('/{animal}', [AnimalController::class, 'show'])->name('pages.animals.show');
-Route::delete('/{animal}', [AnimalController::class, 'destroy'])->name('animals.destroy');
+// Route::get('/animals', [AnimalController::class, 'index'])->name('animals.index');
+// Route::post('/', [AnimalController::class, 'store'])->name('animals.store');
 
-// Route::resource('/animals', AnimalController::class);
+// Route::get('/create', [AnimalController::class, 'create'])->name('animals.create');
+// Route::get('/{animal}/edit', [AnimalController::class, 'edit'])->name('animals.edit');
+// Route::put('/{animal}', [AnimalController::class, 'update'])->name('animals.update');
+// Route::get('/{animal}', [AnimalController::class, 'show'])->name('animals.show');
+// Route::delete('/{animal}', [AnimalController::class, 'destroy'])->name('animals.destroy');
+
+
+Route::get('/animals/deleted', [AnimalController::class, 'deletedIndex'])->name('animals.deleted');
+Route::patch('/animals/{animal}/restore', [AnimalController::class, 'restore'])->name('animals.restore');
+Route::delete('/animals/{animal}/permanent-delete', [AnimalController::class, 'permanentDelete'])->name('animals.permanent.delete');
+Route::resource('/animals', AnimalController::class);

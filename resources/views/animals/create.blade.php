@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div>
-            <form action="{{ route('pages.animals.store')}}" method="POST">
+            <form action="{{ route('animals.store')}}" method="POST">
                 @csrf
 
                 <div class="mb-3">

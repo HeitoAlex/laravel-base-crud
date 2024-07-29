@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div>
-            <form action="{{ route('pages.animals.update', $animal)}}" method="POST">
+            <form action="{{ route('animals.update', $animal)}}" method="POST">
                 @csrf
                 @method('PUT')
 

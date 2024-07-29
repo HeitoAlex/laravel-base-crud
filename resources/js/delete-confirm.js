@@ -8,8 +8,11 @@ deleteForms.forEach((deleteFormELement) => {
         //blocco la propagazione dell'evento
         event.preventDefault();
 
+        //creo una constante per salvare l'attributo con il nome dell'animale da passare al window confirm
+        const animalName = this.getAttribute('data-animal-name');
+        console.log(animalName)
         //realizzo un if che in base alla condizione richiami o meno l'evento bloccato
-        if(window.confirm('Do you really want to delete this animal?') === true){
+        if(window.confirm(`Do you really want to delete ${animalName}?`) === true){
             this.submit();
         }
 

@@ -15,7 +15,7 @@ class AnimalController extends Controller
         //
         $animals = Animal::all();
 
-        return view('pages.animals.index', compact('animals'));
+        return view('animals.index', compact('animals'));
     }
 
     /**
@@ -24,7 +24,7 @@ class AnimalController extends Controller
     public function create()
     {
         //
-        return view('pages.animals.create');
+        return view('animals.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class AnimalController extends Controller
         //alternativa per creare Animal in una sola riga utilizzando le $fillable inserite nel Model
         // $newAnimal = Animal::create($data);
 
-        return redirect()->route('pages.animals.show', $newAnimal);
+        return redirect()->route('animals.show', $newAnimal);
     }
 
     /**
@@ -58,7 +58,7 @@ class AnimalController extends Controller
         //
         // $animal = Animal::findOrFail($name);
 
-        return view('pages.animals.show', compact('animal'));
+        return view('animals.show', compact('animal'));
     }
 
     /**
@@ -67,7 +67,7 @@ class AnimalController extends Controller
     public function edit(Animal $animal)
     {
         //
-        return view('pages.animals.edit', compact('animal'));
+        return view('animals.edit', compact('animal'));
     }
 
     /**
@@ -90,7 +90,7 @@ class AnimalController extends Controller
 
         $animal->update($data);
 
-        return redirect()->route('pages.animals.show', $animal);
+        return redirect()->route('animals.show', $animal);
     }
 
     /**
@@ -101,6 +101,31 @@ class AnimalController extends Controller
         //
         $animal->delete();
 
-        return redirect()->route('pages.animals.index');
+        return redirect()->route('animals.index');
+    }
+
+    public function deletedIndex(){
+
+        $animals = Animal::onlyTrashed()->get();
+
+        return view('animals.deleted-index', compact('animals'));
+    }
+
+    public function restore(string $id){
+
+        $animal = Animal::onlyTrashed()->findOrFail($id);
+
+        $animal->restore();
+
+        return redirect()->route('animals.deleted');
+    }
+
+    public function permanentDelete(string $id){
+
+        $animal = Animal::onlyTrashed()->findOrFail($id);
+
+        $animal->forceDelete();
+
+        return redirect()->route('animals.deleted');
     }
 }
