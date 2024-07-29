@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreAnimalRequest;
+use App\Http\Requests\UpdateAnimalRequest;
 use App\Models\Animal;
 use Illuminate\Http\Request;
 
@@ -30,10 +32,10 @@ class AnimalController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAnimalRequest $request)
     {
-        //
-        $data = $request->all();
+        // convalida i dati della request seguendo queste regole
+        $data = $request->validated();
 
         $newAnimal = new Animal();
         $newAnimal->name = $data['name'];
@@ -73,10 +75,10 @@ class AnimalController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Animal $animal)
+    public function update(UpdateAnimalRequest $request, Animal $animal)
     {
         //
-        $data = $request->all();
+        $data = $request->validated();
 
         //alternativa per creare Animal a mano senza le $fillable inserite nel Model
         // $animal = new Animal();

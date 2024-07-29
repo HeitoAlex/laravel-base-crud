@@ -14,7 +14,7 @@
                         <a class="nav-link {{ Route::currentRouteName() === 'animals.create' ? 'active' : ''}}" href="{{ route('animals.create')}}">Create new animal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ Route::currentRouteName() === 'animals.deleted' ? 'active' : ''}}" href="{{ route('animals.deleted')}}">Deleted animals                        </a>
+                        <a class="nav-link {{ Route::currentRouteName() === 'animals.deleted' ? 'active' : ''}}" href="{{ route('animals.deleted')}}">Deleted animals</a>
                     </li>
                 </ul>
             </div>
