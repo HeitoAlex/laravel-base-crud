@@ -36,5 +36,6 @@ class StoreAnimalRequest extends FormRequest
     {
         //qui inserisco un messaggio personalizzato nel caso di una regola non rispettata
         //es. 'family.min' => 'Inserisci una famiglia di appartenenza che sia lunga almeno 2 caratteri'
+        return [];
     }
 }
